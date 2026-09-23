@@ -1,0 +1,26 @@
+name: Course extensions
+
+on:
+  push:
+    paths:
+      - 'course/**'
+      - '.github/workflows/course-extensions.yml'
+  pull_request:
+    paths:
+      - 'course/**'
+      - '.github/workflows/course-extensions.yml'
+
+jobs:
+  course-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: course
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run course stub tests
+        run: npm test
+        continue-on-error: false

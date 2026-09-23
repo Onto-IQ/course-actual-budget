@@ -1,0 +1,12 @@
+{
+  "name": "course-extensions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts",
+    "test:lab02": "node --experimental-strip-types --test tests/moneyFormat.test.ts",
+    "test:lab03": "node --experimental-strip-types --test tests/categoryRollup.test.ts",
+    "test:lab05": "node --experimental-strip-types --test tests/spendingSummary.test.ts",
+    "test:lab06": "node --experimental-strip-types --test tests/savingsGoal.test.ts"
+  }
+}
