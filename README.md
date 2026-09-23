@@ -1,3 +1,5 @@
+> **Course template (Onto-IQ):** This is a pinned fork of Actual Budget for **Build AI Multi-Agent with Claude Code**. Learners must click **Use this template** (do not Fork for class work). See [COURSE.md](./COURSE.md). Upstream project: [actualbudget/actual](https://github.com/actualbudget/actual) (MIT).
+
 <p align="center">
   <img src="/demo.png" alt="Actualbudget" />
 </p>
