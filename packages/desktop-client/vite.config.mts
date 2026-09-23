@@ -160,19 +160,25 @@ async function stagePublicData(): Promise<void> {
 const lootCoreBackend = (): Plugin => ({
   name: 'loot-core-backend',
   configureServer(server) {
-    const child: ChildProcess = spawn(
-      'yarn',
-      [
-        'vite',
-        'build',
-        '--config',
-        lootCoreConfig,
-        '--mode',
-        'development',
-        '--watch',
-      ],
-      { cwd: lootCoreRoot, stdio: 'inherit' },
-    );
+    const viteArgs = [
+      'vite',
+      'build',
+      '--config',
+      lootCoreConfig,
+      '--mode',
+      'development',
+      '--watch',
+    ];
+    // On Windows `yarn` resolves to yarn.cmd, which spawn() only finds through a
+    // shell; the shell joins args unescaped, so quote them for paths with spaces.
+    const child: ChildProcess =
+      process.platform === 'win32'
+        ? spawn(`yarn ${viteArgs.map(a => `"${a}"`).join(' ')}`, {
+            cwd: lootCoreRoot,
+            stdio: 'inherit',
+            shell: true,
+          })
+        : spawn('yarn', viteArgs, { cwd: lootCoreRoot, stdio: 'inherit' });
     child.on('error', err => {
       server.config.logger.error(
         `loot-core backend failed to spawn: ${err.message}`,
