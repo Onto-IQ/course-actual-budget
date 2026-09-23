@@ -29,3 +29,7 @@ Command Center (if used) is **optional observability**. It is never the acceptan
 ## Community tools (not room-made harness)
 
 Use native Claude Code / OpenCode features plus community add-ons (superpowers, oh-my-openagent, GitHub MCP, Playwright MCP). Do not invent a custom orchestration layer between the two CLIs except for **cross-model review** (Lab 07).
+
+## Windows classroom note
+
+yarn start needs Git Bash (sh) on PATH. If you see loot-core backend failed to spawn: spawn yarn ENOENT, add a yarn shim to %APPDATA%\npm (see lab SETUP.md) or use the Dev Container. Labs under course/ do not require the Actual UI.
