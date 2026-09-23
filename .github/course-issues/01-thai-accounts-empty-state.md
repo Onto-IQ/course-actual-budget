@@ -10,18 +10,19 @@ Learners practice Claude Code Plan mode + Explore + GitHub MCP vs `gh`.
 
 ## Task
 
-When the accounts list has **zero accounts**, show a clear empty-state message that includes Thai text:
+Edit `packages/desktop-client/src/components/accounts/AccountEmptyMessage.tsx`.
+
+When the accounts list is empty, show Thai text (keep the existing Add account button):
 
 `ยังไม่มีบัญชี — เพิ่มบัญชีตัวอย่างเพื่อเริ่มงบประมาณกระดาษ`
 
-Prefer a small, reviewable change under `packages/desktop-client` (or document the exact file you changed in the PR).
-
 ## Acceptance criteria
 
-- [ ] Empty state is visible in the UI with the Thai sentence above (or instructor-approved equivalent).
+- [ ] The Thai sentence appears in `AccountEmptyMessage` (or an instructor-approved equivalent path).
 - [ ] No TypeScript / lint regressions in touched files.
-- [ ] PR opened against **this learner repo** with a short plan in the PR body.
+- [ ] PR opened against **this learner repo** with a short plan in the PR body + MCP vs `gh` note.
 - [ ] Issue closed by the PR or linked with `Fixes #N`.
+- [ ] UI check at http://localhost:3001/ when the app initializes. On Windows, if you hit `loot-core ... spawn yarn ENOENT` / `BackendInitFailure`, document it in the PR; the code change alone still counts for Lab 01.
 
 ## Out of scope
 
