@@ -3,10 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test tests/**/*.test.ts",
+    "test": "node --experimental-strip-types --test tests/fxRate.test.ts",
+    "test:labs": "node --experimental-strip-types --test tests/moneyFormat.test.ts tests/categoryRollup.test.ts tests/spendingSummary.test.ts tests/savingsGoal.test.ts",
     "test:lab02": "node --experimental-strip-types --test tests/moneyFormat.test.ts",
     "test:lab03": "node --experimental-strip-types --test tests/categoryRollup.test.ts",
     "test:lab05": "node --experimental-strip-types --test tests/spendingSummary.test.ts",
-    "test:lab06": "node --experimental-strip-types --test tests/savingsGoal.test.ts"
+    "test:lab06": "node --experimental-strip-types --test tests/savingsGoal.test.ts",
+    "test:all": "node --experimental-strip-types --test tests/**/*.test.ts"
   }
 }
